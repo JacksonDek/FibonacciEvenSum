@@ -10,6 +10,24 @@ namespace FibonacciEvenSum
     {
         static void Main(string[] args)
         {
+            #region Brute Force
+            long fn1 = 1;
+            long fn2 = 1;
+            long summed = 0;
+            long result = 0;
+
+            while(result < 4000000)
+            {
+               if ((result % 2) == 0)
+                {
+                    summed += result;
+                }
+                result = fn1 + fn2;
+                fn2 = fn1;
+                fn1 = result;
+            }
+            Console.WriteLine(summed);
+            #endregion
 
             #region Reducecd Version
             //long[] fib = { 2, 0 };
